@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
             fw.write(""+counter);
             counter++;
             System.out.println(br.readLine());
+            System.out.println("");
 
 
 
