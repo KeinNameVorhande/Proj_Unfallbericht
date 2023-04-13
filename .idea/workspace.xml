@@ -9,7 +9,8 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fac1b2ba-9ff4-4403-b38f-1d032b1f07f7" name="Changes" comment="Patient geändert (DatePicker, TimePicker)&#10;btnSave()-Methode erweitert">
+    <list default="true" id="fac1b2ba-9ff4-4403-b38f-1d032b1f07f7" name="Changes" comment="btnSave()-Methode CheckBox hinzugefügt">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/projekt_unfallbericht/newActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/projekt_unfallbericht/newActivity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -133,7 +134,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681369883945</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="btnSave()-Methode CheckBox hinzugefügt">
+      <created>1681370079792</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1681370079792</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -150,6 +158,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="local changes" />
     <MESSAGE value="Patient geändert (DatePicker, TimePicker)&#10;btnSave()-Methode erweitert" />
-    <option name="LAST_COMMIT_MESSAGE" value="Patient geändert (DatePicker, TimePicker)&#10;btnSave()-Methode erweitert" />
+    <MESSAGE value="btnSave()-Methode CheckBox hinzugefügt" />
+    <option name="LAST_COMMIT_MESSAGE" value="btnSave()-Methode CheckBox hinzugefügt" />
   </component>
 </project>

@@ -10,6 +10,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
 import java.sql.Time;
 
 public class newActivity extends AppCompatActivity {
@@ -26,7 +30,7 @@ public class newActivity extends AppCompatActivity {
     }
 
 
-    public void btnSave(View view){
+    public void btnSave(View view) throws FileNotFoundException {
         Intent intent2 = new Intent(this, MainActivity.class);
         startActivity(intent2);
 
@@ -36,8 +40,8 @@ public class newActivity extends AppCompatActivity {
         EditText tvPLZ = findViewById(R.id.textPLZ);
         EditText tvStrasse = findViewById(R.id.textStraße);
         EditText tvNr = findViewById(R.id.textNr);
-        CheckBox verletzt = findViewById(R.id.checkBoxVerletzte);
-        CheckBox sachschäden = findViewById(R.id.checkBoxSachschäden);
+        CheckBox cbVerletzt = findViewById(R.id.checkBoxVerletzte);
+        CheckBox cbSachschäden = findViewById(R.id.checkBoxSachschäden);
 
         String ort = String.valueOf(tvOrt.getText());
         int plz = Integer.parseInt(String.valueOf(tvPLZ.getText()));
@@ -51,8 +55,14 @@ public class newActivity extends AppCompatActivity {
         int hour = tp.getHour();
         int minute=  tp.getMinute();
 
+        boolean verletzt = cbVerletzt.isChecked();
+        boolean sachschäden = cbSachschäden.isChecked();
 
-        //Patient p = new Patient(ort, strasse,plz,nr,hour, minute,day,month,year);
 
+        Patient p = new Patient(ort, strasse, plz, nr, hour, minute, day, month, year, verletzt, sachschäden);
+
+        FileOutputStream fos = openFileOutput("count.txt", MODE_PRIVATE);
+        PrintWriter out = new PrintWriter(new OutputStreamWriter(fos));
+        
     }
 }
