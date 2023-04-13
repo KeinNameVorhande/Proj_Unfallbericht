@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -35,6 +36,8 @@ public class newActivity extends AppCompatActivity {
         EditText tvPLZ = findViewById(R.id.textPLZ);
         EditText tvStrasse = findViewById(R.id.textStraße);
         EditText tvNr = findViewById(R.id.textNr);
+        CheckBox verletzt = findViewById(R.id.checkBoxVerletzte);
+        CheckBox sachschäden = findViewById(R.id.checkBoxSachschäden);
 
         String ort = String.valueOf(tvOrt.getText());
         int plz = Integer.parseInt(String.valueOf(tvPLZ.getText()));
@@ -49,6 +52,7 @@ public class newActivity extends AppCompatActivity {
         int minute=  tp.getMinute();
 
 
+        //Patient p = new Patient(ort, strasse,plz,nr,hour, minute,day,month,year);
 
     }
 }
