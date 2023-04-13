@@ -20,13 +20,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        int counter = 0;
         try{
             FileInputStream fis = new FileInputStream("count.txt");
             BufferedReader br = new BufferedReader(new FileReader("count.txt"));
             FileWriter fw = new FileWriter("count.txt");
-            fw.write(""+counter);
-            counter++;
+            int counter = Integer.parseInt(br.readLine());
+
+            fw.write(""+counter++);
+
             System.out.println(br.readLine());
             System.out.println("");
 
