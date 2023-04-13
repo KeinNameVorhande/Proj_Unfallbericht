@@ -7,36 +7,43 @@ import java.sql.Date;
 import java.sql.Time;
 
 public class Patient {
-    Time time;
-    Date date;
+
+
     String ort, strasse;
     int plz, nr;
+    int hour, minute;
+    int day, month, year;
     boolean verletzt;
     boolean sachschaeden;
 
-    public Patient(Time time, Date date, String ort, String strasse, int plz, int nr, boolean verletzt, boolean sachschaeden) {
-        this.time = time;
-        this.date = date;
+    public Patient(String ort, String strasse, int plz, int nr, int hour, int minute, int day, int month, int year, boolean verletzt, boolean sachschaeden) {
         this.ort = ort;
         this.strasse = strasse;
         this.plz = plz;
         this.nr = nr;
+        this.hour = hour;
+        this.minute = minute;
+        this.day = day;
+        this.month = month;
+        this.year = year;
         this.verletzt = verletzt;
         this.sachschaeden = sachschaeden;
     }
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("Patient{");
-        sb.append("time=").append(time);
-        sb.append(", date=").append(date);
-        sb.append(", ort='").append(ort).append('\'');
-        sb.append(", strasse='").append(strasse).append('\'');
-        sb.append(", plz=").append(plz);
-        sb.append(", nr=").append(nr);
-        sb.append(", verletzt=").append(verletzt);
-        sb.append(", sachschaeden=").append(sachschaeden);
-        sb.append('}');
-        return sb.toString();
+        return "Patient{" +
+                "ort='" + ort + '\'' +
+                ", strasse='" + strasse + '\'' +
+                ", plz=" + plz +
+                ", nr=" + nr +
+                ", hour=" + hour +
+                ", minute=" + minute +
+                ", day=" + day +
+                ", month=" + month +
+                ", year=" + year +
+                ", verletzt=" + verletzt +
+                ", sachschaeden=" + sachschaeden +
+                '}';
     }
 }

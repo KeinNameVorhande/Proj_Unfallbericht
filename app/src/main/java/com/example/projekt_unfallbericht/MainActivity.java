@@ -18,12 +18,12 @@ public class MainActivity extends AppCompatActivity {
 
         int counter;
 
-        try {
-            FileInputStream fis = openFileInput("count.txt");
-            BufferedReader br = new BufferedReader()
+     /*   try {
+           // FileInputStream fis = openFileInput("count.txt");
+
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
-        }
+        }*/
 
 
     }
