@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.OutputStreamWriter;
@@ -61,8 +62,8 @@ public class newActivity extends AppCompatActivity {
 
         Patient p = new Patient(ort, strasse, plz, nr, hour, minute, day, month, year, verletzt, sachschäden);
 
-        FileOutputStream fos = openFileOutput("count.txt", MODE_PRIVATE);
-        PrintWriter out = new PrintWriter(new OutputStreamWriter(fos));
-        
+        FileInputStream fos = openFileInput("count.txt");
+
+
     }
 }
