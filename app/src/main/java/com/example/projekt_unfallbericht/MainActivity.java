@@ -21,19 +21,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         try{
-            FileInputStream fis = new FileInputStream("count.txt");
             BufferedReader br = new BufferedReader(new FileReader("count.txt"));
-            FileWriter fw = new FileWriter("count.txt");
             int counter = Integer.parseInt(br.readLine());
-
+            br.close();
+            FileWriter fw = new FileWriter("count.txt");
             fw.write(""+counter++);
-
-            System.out.println(br.readLine());
-            System.out.println("");
-
-
-
-
+            fw.close();
         }catch (Exception e){
             Log.d("TAG", "Fehler");
         }
