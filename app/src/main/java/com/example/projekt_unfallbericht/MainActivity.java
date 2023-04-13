@@ -3,11 +3,15 @@ package com.example.projekt_unfallbericht;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,14 +20,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        int counter;
+        int counter = 0;
+        try{
+            FileInputStream fis = new FileInputStream("count.txt");
+            BufferedReader br = new BufferedReader(new FileReader("count.txt"));
+            FileWriter fw = new FileWriter("count.txt");
+            fw.write(""+counter);
+            counter++;
+            System.out.println(br.readLine());
 
-     /*   try {
-           // FileInputStream fis = openFileInput("count.txt");
 
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }*/
+
+
+        }catch (Exception e){
+            Log.d("TAG", "Fehler");
+        }
 
 
     }
