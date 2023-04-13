@@ -32,18 +32,6 @@ public class Patient {
 
     @Override
     public String toString() {
-        return "Patient{" +
-                "ort='" + ort + '\'' +
-                ", strasse='" + strasse + '\'' +
-                ", plz=" + plz +
-                ", nr=" + nr +
-                ", hour=" + hour +
-                ", minute=" + minute +
-                ", day=" + day +
-                ", month=" + month +
-                ", year=" + year +
-                ", verletzt=" + verletzt +
-                ", sachschaeden=" + sachschaeden +
-                '}';
+        return ort + ";" + strasse + ";" + plz + ";" + nr + ";" + hour + ";" + minute + ";" + day + ";" + month + ";" + year + ";" + verletzt + ";" + sachschaeden;
     }
 }
