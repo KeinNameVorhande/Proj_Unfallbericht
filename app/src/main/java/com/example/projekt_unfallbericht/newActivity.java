@@ -9,7 +9,10 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
+import java.io.*;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -31,7 +34,7 @@ public class newActivity extends AppCompatActivity {
     }
 
 
-    public void btnSave(View view) throws FileNotFoundException {
+    public void btnSave(View view) throws IOException {
         Intent intent2 = new Intent(this, MainActivity.class);
         startActivity(intent2);
 
@@ -49,10 +52,12 @@ public class newActivity extends AppCompatActivity {
         String strasse = String.valueOf(tvStrasse.getText());
         int nr = Integer.parseInt(String.valueOf(tvNr.getText()));
 
+        //DatePicker
         int day = dp.getDayOfMonth();
         int month = dp.getMonth();
         int year = dp.getYear();
 
+        //TimePicker
         int hour = tp.getHour();
         int minute=  tp.getMinute();
 
@@ -60,10 +65,22 @@ public class newActivity extends AppCompatActivity {
         boolean sachschäden = cbSachschäden.isChecked();
 
 
-        Patient p = new Patient(ort, strasse, plz, nr, hour, minute, day, month, year, verletzt, sachschäden);
+        if (ort.equals("") || String.valueOf(plz).equals("") || strasse.equals("") || String.valueOf(nr).equals("")){
+            Toast.makeText(this, "Something is empty", Toast.LENGTH_SHORT).show();
+        } else {
+            Patient p = new Patient(ort, strasse, plz, nr, hour, minute, day, month, year, verletzt, sachschäden);
 
-        FileInputStream fos = openFileInput("count.txt");
+            BufferedReader br = new BufferedReader(new FileReader("count.txt"));
+            String fileName = br.readLine();
+            br.close();
 
+            FileWriter fw = new FileWriter(fileName);
+            fw.write(p.toString());
+            fw.close();
+
+            Intent intent = new Intent(this, newActivity.class);
+            startActivity(intent);
+        }
 
     }
 }
