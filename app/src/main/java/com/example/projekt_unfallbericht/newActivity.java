@@ -84,9 +84,16 @@ public class newActivity extends AppCompatActivity {
             pr.write(currentCount + "");
             pr.close();
 
+            openFileOutput("bericht"+currentCount+".txt",MODE_PRIVATE);
+            ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("bericht"+currentCount+".txt"));
+            oos.writeObject(p);
+            oos.close();
+
+
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
         }
+
 
     }
 }
