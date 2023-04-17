@@ -84,8 +84,8 @@ public class newActivity extends AppCompatActivity {
             pr.write(currentCount + "");
             pr.close();
 
-            openFileOutput("bericht"+currentCount+".txt",MODE_PRIVATE);
-            ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("bericht"+currentCount+".txt"));
+
+            ObjectOutputStream oos = new ObjectOutputStream(openFileOutput("bericht"+currentCount+".txt",MODE_PRIVATE));
             oos.writeObject(p);
             oos.close();
 
