@@ -19,6 +19,7 @@ import java.io.FileOutputStream;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.sql.Time;
+import java.util.Scanner;
 
 public class newActivity extends AppCompatActivity {
 
@@ -68,17 +69,22 @@ public class newActivity extends AppCompatActivity {
         if (ort.equals("") || String.valueOf(plz).equals("") || strasse.equals("") || String.valueOf(nr).equals("")){
             Toast.makeText(this, "Something is empty", Toast.LENGTH_SHORT).show();
         } else {
+
+            int currentCount;
             Patient p = new Patient(ort, strasse, plz, nr, hour, minute, day, month, year, verletzt, sachschäden);
+            try {
+                Scanner sc = new Scanner(openFileInput("count.txt"));
+                currentCount = sc.nextInt();
+                sc.close();
+            }catch (Exception e){
+                currentCount = 0;
+            }
+          PrintWriter pr = new PrintWriter((OutputStream) openFileOutput("count.txt",MODE_PRIVATE));
+            currentCount++;
+            pr.write(currentCount + "");
+            pr.close();
 
-            BufferedReader br = new BufferedReader(new FileReader("count.txt"));
-            String fileName = br.readLine();
-            br.close();
-
-            FileWriter fw = new FileWriter(fileName);
-            fw.write(p.toString());
-            fw.close();
-
-            Intent intent = new Intent(this, newActivity.class);
+            Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
         }
 
