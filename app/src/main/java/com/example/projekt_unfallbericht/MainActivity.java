@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
                 23);
 
-        getCount();
+        //getCount();
         try {
             getPatients();
         } catch (IOException e) {
@@ -74,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
             if(!temp.equals("count.txt")) {
                 ObjectInputStream ois = new ObjectInputStream(openFileInput(temp));
                 Patient p = (Patient) ois.readObject();
+                al.add(p);
             }
         }
 
