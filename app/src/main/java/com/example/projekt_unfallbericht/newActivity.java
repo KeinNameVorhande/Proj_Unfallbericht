@@ -71,6 +71,9 @@ public class newActivity extends AppCompatActivity {
 
             int currentCount;
             Patient p = new Patient(ort, strasse, plz, nr, hour, minute, day, month, year, verletzt, sachschäden);
+
+
+
             try {
                 Scanner sc = new Scanner(openFileInput("count.txt"));
                 currentCount = sc.nextInt();
@@ -95,4 +98,10 @@ public class newActivity extends AppCompatActivity {
 
 
     }
+
+     public void btnNeuerZeuge(View view){
+        Intent intent = new Intent(this, activity_zeuge.class);
+        startActivity(intent);
+
+     }
 }

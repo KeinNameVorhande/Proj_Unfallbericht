@@ -94,4 +94,17 @@
         android:layout_height="wrap_content"
         android:onClick="btnSave"
         android:text="Speichern" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Zeugen" />
+
+    <Button
+        android:id="@+id/btnZeuge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="btnNeuerZeuge"
+        android:text="hinzufügen" />
 </LinearLayout>
