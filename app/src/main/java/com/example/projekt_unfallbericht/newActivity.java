@@ -41,6 +41,14 @@ public class newActivity extends AppCompatActivity {
         setContentView(R.layout.activity_new);
 
         tvOrt = findViewById(R.id.textOrt);
+        dp = findViewById(R.id.datePicker);
+        tp = findViewById(R.id.timePicker);
+        tvPLZ = findViewById(R.id.textPLZ);
+        tvStrasse = findViewById(R.id.textStraße);
+        tvNr = findViewById(R.id.textNr);
+        cbVerletzt = findViewById(R.id.checkBoxVerletzte);
+        cbSachschäden = findViewById(R.id.checkBoxSachschäden);
+
 
         Intent intent = getIntent();
         Bundle b = intent.getExtras();
