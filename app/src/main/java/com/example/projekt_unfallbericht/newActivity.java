@@ -20,6 +20,7 @@ import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.sql.Time;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class newActivity extends AppCompatActivity {
@@ -71,7 +72,7 @@ public class newActivity extends AppCompatActivity {
         } else {
 
             int currentCount;
-            Patient p = new Patient(ort, strasse, plz, nr, hour, minute, day, month, year, verletzt, sachschäden, new ArrayList<Person>());
+            Patient p = new Patient(ort, strasse, plz, nr, hour, minute, day, month, year, verletzt, sachschäden, new LinkedList<Person>());
             try {
                 Scanner sc = new Scanner(openFileInput("count.txt"));
                 currentCount = sc.nextInt();

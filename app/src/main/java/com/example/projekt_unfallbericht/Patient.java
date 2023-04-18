@@ -7,6 +7,7 @@ import java.io.Serializable;
 import java.sql.Date;
 import java.sql.Time;
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class Patient implements Serializable {
 
@@ -17,9 +18,11 @@ public class Patient implements Serializable {
     int day, month, year;
     boolean verletzt;
     boolean sachschaeden;
-    ArrayList<Person> zeugen;
 
-    public Patient(String ort, String strasse, int plz, int nr, int hour, int minute, int day, int month, int year, boolean verletzt, boolean sachschaeden, ArrayList<Person> zeugen) {
+    LinkedList<Person> zeugen;
+
+
+    public Patient(String ort, String strasse, int plz, int nr, int hour, int minute, int day, int month, int year, boolean verletzt, boolean sachschaeden, LinkedList<Person> zeugen) {
         this.ort = ort;
         this.strasse = strasse;
         this.plz = plz;
@@ -33,6 +36,7 @@ public class Patient implements Serializable {
         this.sachschaeden = sachschaeden;
         this.zeugen = zeugen;
     }
+
 
 
     public String getOrt() {
@@ -123,7 +127,13 @@ public class Patient implements Serializable {
         this.sachschaeden = sachschaeden;
     }
 
+    public LinkedList<Person> getZeugen() {
+        return zeugen;
+    }
 
+    public void setZeugen(LinkedList<Person> zeugen) {
+        this.zeugen = zeugen;
+    }
 
     @Override
     public String toString() {
