@@ -17,11 +17,13 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.OutputStream;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MainActivity extends AppCompatActivity {
     Scanner scCounter;
     int counter;
+    ArrayList<Patient> al;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,8 +37,10 @@ public class MainActivity extends AppCompatActivity {
                 counter = scCounter.nextInt();
             }
         } catch (Exception e) {
-
+            e.printStackTrace();
         }
+
+
     }
     public void onButtonCLick(View view){
         Intent intent = new Intent(this, newActivity.class);
