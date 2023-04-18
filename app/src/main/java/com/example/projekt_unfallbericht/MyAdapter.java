@@ -15,7 +15,8 @@ public class MyAdapter extends BaseAdapter {
     private int layoutID;
     private LayoutInflater inflater;
 
-    public MyAdapter(Context ctx, int layoutID, List<Patient> list) {
+
+    public MyAdapter(Context ctx, List<Patient> list, int layoutID) {
         this.list = list;
         this.layoutID = layoutID;
         this.inflater = (LayoutInflater) ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -40,10 +41,10 @@ public class MyAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         Patient patient = list.get(position);
         View listItem = (convertView == null) ? inflater.inflate(this.layoutID, null) : convertView;
-        ((TextView) listItem.findViewById(R.id.listViewTelefonNr)).setText(String.valueOf(patient.getNr()));
         ((TextView) listItem.findViewById(R.id.listViewPLZ)).setText(String.valueOf(patient.getPlz()));
         ((TextView) listItem.findViewById(R.id.listViewOrt)).setText(patient.getOrt());
-        ((TextView) listItem.findViewById(R.id.listViewStraße)).setText(patient.getStrasse());
+        ((TextView) listItem.findViewById(R.id.listViewStraße)).setText(patient.getStrasse() + " " + patient.getNr());
+
         return listItem;
     }
 }

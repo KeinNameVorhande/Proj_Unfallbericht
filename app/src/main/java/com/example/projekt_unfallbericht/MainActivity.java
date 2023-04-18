@@ -2,25 +2,14 @@ package com.example.projekt_unfallbericht;
 
 import android.Manifest;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectInputStream;
-import java.io.OutputStream;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -29,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     int counter;
     ArrayList<Patient> al;
     ListView lv;
-    ArrayAdapter<Patient> adapter;
+    MyAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,19 +40,14 @@ public class MainActivity extends AppCompatActivity {
             throw new RuntimeException(e);
         }
         bindAdapter(lv);
-
-
-
-
-
-
     }
+
+
     public void onButtonCLick(View view){
         Intent intent = new Intent(this, newActivity.class);
         startActivity(intent);
 
         Bundle bundle = intent.getExtras();
-
     }
 
 
@@ -92,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void bindAdapter(ListView lv){
-        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, al);
+        adapter = new MyAdapter(this, al, R.layout.my_layout);
         lv.setAdapter(adapter);
     }
 
