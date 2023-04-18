@@ -44,18 +44,19 @@ public class newActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         Bundle b = intent.getExtras();
-        Patient p;
-        if(b.containsKey("filename")){
-            try {
-                ObjectInputStream ois = new ObjectInputStream(openFileInput(b.getString("filename")));
-                p = (Patient) ois.readObject();
-                tvOrt.setText(p.getOrt());
-            } catch (Exception e) {
-                throw new RuntimeException(e);
+        if(b != null) {
+            Patient p;
+            if (b.containsKey("filename")) {
+                try {
+                    ObjectInputStream ois = new ObjectInputStream(openFileInput(b.getString("filename")));
+                    p = (Patient) ois.readObject();
+                    tvOrt.setText(p.getOrt());
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
+                b.remove("filename");
             }
-            b.remove("filename");
         }
-
 
 
     }
