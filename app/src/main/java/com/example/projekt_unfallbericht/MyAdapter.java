@@ -15,7 +15,8 @@ public class MyAdapter extends BaseAdapter {
     private int layoutID;
     private LayoutInflater inflater;
 
-    public MyAdapter(Context ctx, int layoutID, List<Patient> list) {
+
+    public MyAdapter(Context ctx, List<Patient> list, int layoutID) {
         this.list = list;
         this.layoutID = layoutID;
         this.inflater = (LayoutInflater) ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
