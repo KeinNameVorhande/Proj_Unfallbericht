@@ -98,4 +98,11 @@ public class newActivity extends AppCompatActivity {
 
 
     }
+
+    public void btnNeuerZeuge(View view){
+        Intent intent = new Intent(this, activity_zeuge.class);
+        startActivity(intent);
+
+
+    }
 }
