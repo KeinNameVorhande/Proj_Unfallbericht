@@ -25,12 +25,37 @@ import java.util.Scanner;
 
 public class newActivity extends AppCompatActivity {
 
+
+    EditText tvOrt;
+    DatePicker dp;
+    TimePicker tp;
+    EditText tvPLZ;
+    EditText tvStrasse;
+    EditText tvNr;
+    CheckBox cbVerletzt;
+    CheckBox cbSachschäden;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new);
         setContentView(R.layout.activity_new);
+
+        tvOrt = findViewById(R.id.textOrt);
+
         Intent intent = getIntent();
+        Bundle b = intent.getExtras();
+        Patient p;
+        if(b.containsKey("filename")){
+            try {
+                ObjectInputStream ois = new ObjectInputStream(openFileInput(b.getString("filename")));
+                p = (Patient) ois.readObject();
+                tvOrt.setText(p.getOrt());
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+            b.remove("filename");
+        }
+
 
 
     }
@@ -39,15 +64,6 @@ public class newActivity extends AppCompatActivity {
     public void btnSave(View view) throws IOException {
         Intent intent2 = new Intent(this, MainActivity.class);
         startActivity(intent2);
-
-        EditText tvOrt = findViewById(R.id.textOrt);
-        DatePicker dp = findViewById(R.id.datePicker);
-        TimePicker tp = findViewById(R.id.timePicker);
-        EditText tvPLZ = findViewById(R.id.textPLZ);
-        EditText tvStrasse = findViewById(R.id.textStraße);
-        EditText tvNr = findViewById(R.id.textNr);
-        CheckBox cbVerletzt = findViewById(R.id.checkBoxVerletzte);
-        CheckBox cbSachschäden = findViewById(R.id.checkBoxSachschäden);
 
         String ort = String.valueOf(tvOrt.getText());
         int plz = Integer.parseInt(String.valueOf(tvPLZ.getText()));
@@ -97,11 +113,15 @@ public class newActivity extends AppCompatActivity {
         }
 
 
+
+
     }
 
     public void btnNeuerZeuge(View view){
         Intent intent = new Intent(this, activity_zeuge.class);
         startActivity(intent);
+
+
 
 
     }

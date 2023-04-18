@@ -6,6 +6,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.io.IOException;
@@ -31,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
                 23);
 
-        //getCount();
+
         try {
             getPatients();
         } catch (IOException e) {
@@ -40,13 +41,22 @@ public class MainActivity extends AppCompatActivity {
             throw new RuntimeException(e);
         }
         bindAdapter(lv);
+
+
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(getApplicationContext(), newActivity.class);
+                intent.putExtra("filename","bericht"+(i+1)+".txt");
+                startActivity(intent);
+            }
+        });
     }
 
 
     public void onButtonCLick(View view){
-        Intent intent = new Intent(this, newActivity.class);
+        Intent intent = new Intent( this, newActivity.class);
         startActivity(intent);
-
         Bundle bundle = intent.getExtras();
     }
 
