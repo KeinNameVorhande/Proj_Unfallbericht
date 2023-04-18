@@ -43,8 +43,8 @@ public class MyAdapter extends BaseAdapter {
         View listItem = (convertView == null) ? inflater.inflate(this.layoutID, null) : convertView;
         ((TextView) listItem.findViewById(R.id.listViewPLZ)).setText(String.valueOf(patient.getPlz()));
         ((TextView) listItem.findViewById(R.id.listViewOrt)).setText(patient.getOrt());
-        ((TextView) listItem.findViewById(R.id.listViewStraße)).setText(patient.getStrasse());
-        ((TextView) listItem.findViewById(R.id.listViewNr)).setText(String.valueOf(patient.getNr()));
+        ((TextView) listItem.findViewById(R.id.listViewStraße)).setText(patient.getStrasse() + " " + patient.getNr());
+
         return listItem;
     }
 }
