@@ -6,6 +6,7 @@ import com.example.*;
 import java.io.Serializable;
 import java.sql.Date;
 import java.sql.Time;
+import java.util.ArrayList;
 
 public class Patient implements Serializable {
 
@@ -16,8 +17,9 @@ public class Patient implements Serializable {
     int day, month, year;
     boolean verletzt;
     boolean sachschaeden;
+    ArrayList<Person> zeugen;
 
-    public Patient(String ort, String strasse, int plz, int nr, int hour, int minute, int day, int month, int year, boolean verletzt, boolean sachschaeden) {
+    public Patient(String ort, String strasse, int plz, int nr, int hour, int minute, int day, int month, int year, boolean verletzt, boolean sachschaeden, ArrayList<Person> zeugen) {
         this.ort = ort;
         this.strasse = strasse;
         this.plz = plz;
@@ -29,6 +31,7 @@ public class Patient implements Serializable {
         this.year = year;
         this.verletzt = verletzt;
         this.sachschaeden = sachschaeden;
+        this.zeugen = zeugen;
     }
 
 
@@ -120,8 +123,11 @@ public class Patient implements Serializable {
         this.sachschaeden = sachschaeden;
     }
 
+
+
     @Override
     public String toString() {
-        return ort + ";" + strasse + ";" + plz + ";" + nr + ";" + hour + ";" + minute + ";" + day + ";" + month + ";" + year + ";" + verletzt + ";" + sachschaeden;
+        return ort+"\n"+day+":"+month+":"+year;
+
     }
 }

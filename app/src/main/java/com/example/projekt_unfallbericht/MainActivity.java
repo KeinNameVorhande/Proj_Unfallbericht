@@ -40,19 +40,14 @@ public class MainActivity extends AppCompatActivity {
             throw new RuntimeException(e);
         }
         bindAdapter(lv);
-
-
-
-
-
-
     }
+
+
     public void onButtonCLick(View view){
         Intent intent = new Intent(this, newActivity.class);
         startActivity(intent);
 
         Bundle bundle = intent.getExtras();
-
     }
 
 
