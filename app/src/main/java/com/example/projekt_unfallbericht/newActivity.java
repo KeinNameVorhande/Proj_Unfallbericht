@@ -27,9 +27,8 @@ public class newActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new);
-       setContentView(R.layout.activity_new);
+        setContentView(R.layout.activity_new);
         Intent intent = getIntent();
-
 
 
     }
@@ -60,13 +59,13 @@ public class newActivity extends AppCompatActivity {
 
         //TimePicker
         int hour = tp.getHour();
-        int minute=  tp.getMinute();
+        int minute = tp.getMinute();
 
         boolean verletzt = cbVerletzt.isChecked();
         boolean sachschäden = cbSachschäden.isChecked();
 
 
-        if (ort.equals("") || String.valueOf(plz).equals("") || strasse.equals("") || String.valueOf(nr).equals("")){
+        if (ort.equals("") || String.valueOf(plz).equals("") || strasse.equals("") || String.valueOf(nr).equals("")) {
             Toast.makeText(this, "Something is empty", Toast.LENGTH_SHORT).show();
         } else {
 
@@ -76,10 +75,10 @@ public class newActivity extends AppCompatActivity {
                 Scanner sc = new Scanner(openFileInput("count.txt"));
                 currentCount = sc.nextInt();
                 sc.close();
-            }catch (Exception e){
+            } catch (Exception e) {
                 currentCount = 0;
             }
-          PrintWriter pr = new PrintWriter((OutputStream) openFileOutput("count.txt",MODE_PRIVATE));
+            PrintWriter pr = new PrintWriter((OutputStream) openFileOutput("count.txt", MODE_PRIVATE));
             currentCount++;
             pr.write(currentCount + "");
             pr.close();
