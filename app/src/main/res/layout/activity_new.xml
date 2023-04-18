@@ -107,4 +107,9 @@
         android:layout_height="wrap_content"
         android:onClick="btnNeuerZeuge"
         android:text="hinzufügen" />
+
+    <ListView
+        android:id="@+id/listViewZeuge"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 </LinearLayout>
