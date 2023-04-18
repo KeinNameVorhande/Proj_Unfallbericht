@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -86,30 +86,31 @@
             android:layout_height="wrap_content"
             android:text="Sachschäden" />
 
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="btnSave"
+            android:text="Speichern" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Zeugen" />
+
+        <Button
+            android:id="@+id/btnZeuge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="btnNeuerZeuge"
+            android:text="hinzufügen" />
+
+        <ListView
+            android:id="@+id/listViewZeuge"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btnSave"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="btnSave"
-        android:text="Speichern" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Zeugen" />
-
-    <Button
-        android:id="@+id/btnZeuge"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="btnNeuerZeuge"
-        android:text="hinzufügen" />
-
-    <ListView
-        android:id="@+id/listViewZeuge"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-</LinearLayout>
+</ScrollView>
