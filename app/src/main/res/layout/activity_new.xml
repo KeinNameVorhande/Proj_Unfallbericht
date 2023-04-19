@@ -136,22 +136,19 @@
                 android:text="❌" />
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
-            android:text="Zeugen" />
+
 
         <Button
             android:id="@+id/btnZeuge"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/round_btn"
             android:onClick="btnNeuerZeuge"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
-            android:text="hinzufügen" />
+            android:layout_gravity="center_horizontal"
+            android:text="Zeuge hinzufügen"
+            android:layout_marginTop="15dp"
+            android:padding="10dp"
+            android:textSize="20dp"/>
 
         <ListView
             android:id="@+id/listViewZeuge"
