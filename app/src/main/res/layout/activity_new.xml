@@ -117,6 +117,13 @@
             android:paddingRight="15dp"
             android:text="Speichern" />
 
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="btnZurueck"
+            android:text="Zurück" />
+
         <TextView
             android:id="@+id/textView3"
             android:layout_width="match_parent"
