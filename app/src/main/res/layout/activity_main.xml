@@ -33,13 +33,18 @@
     <ListView
         android:id="@+id/listView"
         android:layout_width="match_parent"
-        android:layout_height="452dp"
+        android:layout_height="402dp"
         android:layout_weight="1"
         android:paddingLeft="15dp"
         android:paddingRight="15dp" />
 
 
     <Button
+
+        style="@style/Widget.AppCompat.Button.Borderless"
+
+
+        android:layout_weight="1"
         android:id="@+id/btn_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
