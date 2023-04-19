@@ -156,8 +156,9 @@
             android:id="@+id/btnOK"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/round_btn"
+            android:layout_marginHorizontal="10dp"
             android:layout_weight="1"
+            android:background="@drawable/round_btn"
             android:onClick="btnOk"
             android:text="💾" />
 
@@ -174,6 +175,7 @@
             android:id="@+id/btnDelete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
             android:layout_weight="1"
             android:background="@drawable/round_btn"
             android:onClick="btnDelete"
