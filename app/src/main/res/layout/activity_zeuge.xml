@@ -17,6 +17,8 @@
             android:layout_width="40dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
             android:text="Vorname" />
 
         <EditText
@@ -38,6 +40,8 @@
             android:layout_width="40dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
             android:text="Nachname" />
 
         <EditText
@@ -59,6 +63,8 @@
             android:layout_width="40dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
             android:text="Strasse" />
 
         <EditText
@@ -80,6 +86,8 @@
             android:layout_width="40dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
             android:text="Ort" />
 
         <EditText
@@ -101,6 +109,8 @@
             android:layout_width="40dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
             android:text="Nummer" />
 
         <EditText

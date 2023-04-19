@@ -26,6 +26,7 @@
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
             android:text="Ort" />
 
         <EditText
@@ -33,12 +34,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
             android:inputType="textPersonName" />
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
             android:text="PLZ" />
 
         <EditText
@@ -46,12 +50,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
             android:inputType="textPersonName" />
 
         <TextView
             android:id="@+id/textView4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
             android:text="Straße" />
 
         <EditText
@@ -59,12 +66,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
             android:inputType="textPersonName" />
 
         <TextView
             android:id="@+id/textView6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
             android:text="Nr" />
 
         <EditText
@@ -72,18 +82,25 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
             android:inputType="textPersonName" />
 
         <CheckBox
             android:id="@+id/checkBoxVerletzte"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Verletzte" />
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:text="Verletzte"
+            />
 
         <CheckBox
             android:id="@+id/checkBoxSachschäden"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
             android:text="Sachschäden" />
 
         <Button
@@ -91,12 +108,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="btnSave"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
             android:text="Speichern" />
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
             android:text="Zeugen" />
 
         <Button
@@ -104,12 +125,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="btnNeuerZeuge"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
             android:text="hinzufügen" />
 
         <ListView
             android:id="@+id/listViewZeuge"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            />
 
     </LinearLayout>
 

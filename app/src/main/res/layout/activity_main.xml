@@ -19,6 +19,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="onButtonCLick"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
             android:text="Neuer Fall" />
 
     </LinearLayout>
@@ -27,12 +29,16 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_weight="1"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
         android:text="vorhandene Fälle" />
 
     <ListView
         android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="483dp"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"/>
 
 </LinearLayout>
