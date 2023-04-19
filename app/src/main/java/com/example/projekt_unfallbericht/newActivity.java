@@ -34,11 +34,18 @@ public class newActivity extends AppCompatActivity {
     EditText tvNr;
     CheckBox cbVerletzt;
     CheckBox cbSachschäden;
+
+    Intent intent;
+    Bundle b;
+    boolean change;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new);
         setContentView(R.layout.activity_new);
+
+        change = false;
 
         tvOrt = findViewById(R.id.textOrt);
         dp = findViewById(R.id.datePicker);
@@ -50,19 +57,27 @@ public class newActivity extends AppCompatActivity {
         cbSachschäden = findViewById(R.id.checkBoxSachschäden);
 
 
-        Intent intent = getIntent();
-        Bundle b = intent.getExtras();
+        intent = getIntent();
+        b = intent.getExtras();
         if(b != null) {
             Patient p;
             if (b.containsKey("filename")) {
+                change = true;
                 try {
                     ObjectInputStream ois = new ObjectInputStream(openFileInput(b.getString("filename")));
                     p = (Patient) ois.readObject();
                     tvOrt.setText(p.getOrt());
+                    dp.updateDate(p.year,p.month,p.year);
+                    tp.setHour(p.hour);
+                    tp.setMinute(p.minute);
+                    tvPLZ.setText(String.valueOf(p.plz));
+                    tvStrasse.setText(p.strasse);
+                    tvNr.setText(String.valueOf(p.nr));
+                    cbSachschäden.setChecked(p.sachschaeden);
+                    cbVerletzt.setChecked(p.verletzt);
                 } catch (Exception e) {
                     throw new RuntimeException(e);
                 }
-                b.remove("filename");
             }
         }
 
@@ -91,34 +106,46 @@ public class newActivity extends AppCompatActivity {
         boolean verletzt = cbVerletzt.isChecked();
         boolean sachschäden = cbSachschäden.isChecked();
 
+        b = intent.getExtras();
 
-        if (ort.equals("") || String.valueOf(plz).equals("") || strasse.equals("") || String.valueOf(nr).equals("")) {
-            Toast.makeText(this, "Something is empty", Toast.LENGTH_SHORT).show();
-        } else {
-
-            int currentCount;
-            Patient p = new Patient(ort, strasse, plz, nr, hour, minute, day, month, year, verletzt, sachschäden, new LinkedList<Person>());
-            try {
-                Scanner sc = new Scanner(openFileInput("count.txt"));
-                currentCount = sc.nextInt();
-                sc.close();
-            } catch (Exception e) {
-                currentCount = 0;
-            }
-            PrintWriter pr = new PrintWriter((OutputStream) openFileOutput("count.txt", MODE_PRIVATE));
-            currentCount++;
-            pr.write(currentCount + "");
-            pr.close();
-
-
-            ObjectOutputStream oos = new ObjectOutputStream(openFileOutput("bericht"+currentCount+".txt",MODE_PRIVATE));
-            oos.writeObject(p);
+        if(change){
+            ObjectOutputStream oos = new ObjectOutputStream(openFileOutput(b.getString("filename") , MODE_PRIVATE));
+            oos.writeObject(new Patient(ort, strasse, plz, nr, hour, minute, day, month, year, verletzt, sachschäden, new LinkedList<Person>()));
             oos.close();
+            b.remove("filename");
+            change = false;
+        }
+        else {
 
 
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
-            System.out.println("test");
+            if (ort.equals("") || String.valueOf(plz).equals("") || strasse.equals("") || String.valueOf(nr).equals("")) {
+                Toast.makeText(this, "Something is empty", Toast.LENGTH_SHORT).show();
+            } else {
+
+                int currentCount;
+                Patient p = new Patient(ort, strasse, plz, nr, hour, minute, day, month, year, verletzt, sachschäden, new LinkedList<Person>());
+                try {
+                    Scanner sc = new Scanner(openFileInput("count.txt"));
+                    currentCount = sc.nextInt();
+                    sc.close();
+                } catch (Exception e) {
+                    currentCount = 0;
+                }
+                PrintWriter pr = new PrintWriter((OutputStream) openFileOutput("count.txt", MODE_PRIVATE));
+                currentCount++;
+                pr.write(currentCount + "");
+                pr.close();
+
+
+                ObjectOutputStream oos = new ObjectOutputStream(openFileOutput("bericht" + currentCount + ".txt", MODE_PRIVATE));
+                oos.writeObject(p);
+                oos.close();
+
+
+                Intent intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
+                System.out.println("test");
+            }
         }
 
 
