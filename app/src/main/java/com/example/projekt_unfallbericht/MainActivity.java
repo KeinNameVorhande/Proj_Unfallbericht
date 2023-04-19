@@ -53,6 +53,10 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
 
     public void onButtonCLick(View view){
         Intent intent = new Intent( this, newActivity.class);
