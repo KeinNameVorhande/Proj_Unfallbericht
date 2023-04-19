@@ -27,6 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="15dp"
+            android:textColorHighlight="@color/white"
             android:text="Ort" />
 
         <EditText
@@ -34,6 +35,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:outlineAmbientShadowColor="@color/white"
+            android:outlineSpotShadowColor="@color/white"
+            android:textColorHighlight="@color/white"
+            android:textColorLink="@color/white"
             android:paddingLeft="15dp"
             android:paddingRight="15dp"
             android:inputType="textPersonName" />
