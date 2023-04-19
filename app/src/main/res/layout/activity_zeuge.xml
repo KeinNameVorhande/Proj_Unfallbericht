@@ -156,24 +156,27 @@
             android:id="@+id/btnOK"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/round_btn"
             android:layout_weight="1"
             android:onClick="btnOk"
-            android:text="Ok" />
+            android:text="💾" />
 
         <Button
             android:id="@+id/btnCancel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@drawable/round_btn"
             android:onClick="btnCancel"
-            android:text="Cancel" />
+            android:text="❌" />
 
         <Button
             android:id="@+id/btnDelete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@drawable/round_btn"
             android:onClick="btnDelete"
-            android:text="Delete" />
+            android:text="🗑️" />
     </LinearLayout>
 </LinearLayout>
