@@ -31,8 +31,6 @@ public class activity_zeuge extends AppCompatActivity {
 
     public void btnOk(View view){
 
-
-
     }
 
 

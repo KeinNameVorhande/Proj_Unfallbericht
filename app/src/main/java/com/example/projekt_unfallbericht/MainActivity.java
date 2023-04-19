@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatDelegate;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -92,6 +93,10 @@ public class MainActivity extends AppCompatActivity {
     public void bindAdapter(ListView lv){
         adapter = new MyAdapter(this, al, R.layout.my_layout);
         lv.setAdapter(adapter);
+    }
+
+    public void btnLight(View view){
+
     }
 
 }
