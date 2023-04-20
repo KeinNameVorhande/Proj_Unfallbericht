@@ -140,6 +140,7 @@ public class newActivity extends AppCompatActivity {
                 ObjectOutputStream oos = new ObjectOutputStream(openFileOutput("bericht" + currentCount + ".txt", MODE_PRIVATE));
                 oos.writeObject(p);
                 oos.close();
+                System.out.println("test");
 
 
                 Intent intent = new Intent(this, MainActivity.class);
@@ -153,14 +154,11 @@ public class newActivity extends AppCompatActivity {
 
     }
 
-    public void btnNeuerZeuge(View view){
-        Intent intent = new Intent(this, activity_zeuge.class);
-        startActivity(intent);
 
 
 
 
-    }
+
 
     public void btnZurueck(View view){
         Intent intent = new Intent(this, MainActivity.class);
