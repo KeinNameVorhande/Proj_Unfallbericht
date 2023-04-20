@@ -15,15 +15,33 @@
 
     </LinearLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="87dp"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_weight="1"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
-        android:text="vorhandene Fälle"
-        android:textSize="24sp"
-        android:textStyle="italic" />
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:text="vorhandene Fälle"
+            android:textSize="24sp"
+            android:textStyle="italic" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="25dp"
+            android:onClick="onButtonCLick"
+            android:background="@drawable/round_btn"
+
+            android:text="+" />
+    </LinearLayout>
 
     <Space
         android:layout_width="match_parent"
@@ -33,29 +51,10 @@
     <ListView
         android:id="@+id/listView"
         android:layout_width="match_parent"
-        android:layout_height="402dp"
-        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:layout_weight="166"
         android:paddingLeft="15dp"
         android:paddingRight="15dp" />
 
-
-    <Button
-
-        style="@style/Widget.AppCompat.Button.Borderless"
-
-
-        android:layout_weight="1"
-        android:id="@+id/btn_login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="150dp"
-        android:layout_marginVertical="100dp"
-        android:layout_marginTop="20dip"
-        android:background="@drawable/round_btn"
-        android:gravity="center"
-        android:text="+"
-        android:textColor="@android:color/white"
-        android:onClick="onButtonCLick"
-        android:textSize="20dp" />
 
 </LinearLayout>

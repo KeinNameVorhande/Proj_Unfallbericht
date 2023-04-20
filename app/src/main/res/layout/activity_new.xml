@@ -9,13 +9,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <DatePicker
-            android:id="@+id/datePicker"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:calendarViewShown="false"
-            android:datePickerMode="spinner" />
-
         <TimePicker
             android:id="@+id/timePicker"
             android:layout_width="match_parent"
@@ -117,44 +110,25 @@
 
             <Button
                 android:id="@+id/btnSave"
-                android:layout_width="wrap_content"
+                android:layout_width="180dp"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_marginRight="10dp"
                 android:background="@drawable/round_btn"
                 android:onClick="btnSave"
-                android:layout_marginRight="10dp"
-                android:text="💾"
-                android:layout_gravity="center_vertical|center_horizontal"/>
+                android:text="💾" />
 
             <Button
                 android:id="@+id/btnBack"
-                android:layout_width="wrap_content"
+                android:layout_width="177dp"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_marginLeft="10dp"
                 android:background="@drawable/round_btn"
                 android:onClick="btnZurueck"
-                android:layout_marginLeft="10dp"
-                android:layout_gravity="center_vertical|center_horizontal"
                 android:text="❌" />
         </LinearLayout>
 
-
-
-        <Button
-            android:id="@+id/btnZeuge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/round_btn"
-            android:onClick="btnNeuerZeuge"
-            android:layout_gravity="center_horizontal"
-            android:text="Zeuge hinzufügen"
-            android:layout_marginTop="15dp"
-            android:padding="10dp"
-            android:textSize="20dp"/>
-
-        <ListView
-            android:id="@+id/listViewZeuge"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            />
 
     </LinearLayout>
 
