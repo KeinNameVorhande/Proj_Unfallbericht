@@ -67,7 +67,7 @@ public class newActivity extends AppCompatActivity {
                     ObjectInputStream ois = new ObjectInputStream(openFileInput(b.getString("filename")));
                     p = (Patient) ois.readObject();
                     tvOrt.setText(p.getOrt());
-                    dp.updateDate(p.year,p.month,p.year);
+                    dp.updateDate(p.year,p.month,p.day);
                     tp.setHour(p.hour);
                     tp.setMinute(p.minute);
                     tvPLZ.setText(String.valueOf(p.plz));

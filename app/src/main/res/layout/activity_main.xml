@@ -35,12 +35,14 @@
             android:id="@+id/button"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="10dp"
             android:layout_weight="1"
-            android:textSize="25dp"
-            android:onClick="onButtonCLick"
             android:background="@drawable/round_btn"
 
-            android:text="+" />
+            android:onClick="onButtonCLick"
+            android:text="+"
+            android:textSize="25dp" />
     </LinearLayout>
 
     <Space
