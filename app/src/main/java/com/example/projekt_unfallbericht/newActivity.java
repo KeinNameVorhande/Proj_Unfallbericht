@@ -75,6 +75,7 @@ public class newActivity extends AppCompatActivity {
                     tvNr.setText(String.valueOf(p.nr));
                     cbSachschäden.setChecked(p.sachschaeden);
                     cbVerletzt.setChecked(p.verletzt);
+                    System.out.println("test");
                 } catch (Exception e) {
                     throw new RuntimeException(e);
                 }
